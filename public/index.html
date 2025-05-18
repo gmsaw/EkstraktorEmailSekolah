@@ -20,7 +20,22 @@
     </style>
 </head>
 <body class="bg-gray-50 min-h-screen text-gray-800">
-    <div class="container mx-auto px-4 py-8 max-w-4xl">
+    <!-- Header -->
+    <header class="bg-white shadow-sm">
+        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                </svg>
+                <h1 class="text-xl font-semibold">Ekstraktor Email Sekolah</h1>
+            </div>
+            <div class="text-sm text-gray-500">
+                <a href="https://instagram.com/gmsaw_" class="hover:text-blue-500 transition-colors">by.gmsaw</a>
+            </div>
+        </div>
+    </header>
+
+    <main class="container mx-auto px-4 py-8 max-w-4xl">
         <!-- Header -->
         <div class="text-center mb-10">
             <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-50 flex items-center justify-center animate-float">
@@ -78,7 +93,7 @@
             </div>
         </div>
 
-        <!-- Results Section -->
+        <!-- Hasil Ekstraksi Section -->
         <div id="resultContainer" class="mt-8 hidden">
             <div class="flex justify-between items-center mb-4">
                 <h2 class="text-lg font-medium text-gray-700">Hasil Ekstraksi</h2>
@@ -86,14 +101,17 @@
             </div>
             
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <div class="overflow-x-auto">
-                    <table class="w-full">
+                <!-- Tambahkan container dengan overflow-x-auto -->
+                <div class="overflow-x-auto w-full">
+                    <table class="w-full min-w-max">
                         <thead class="text-xs text-gray-500 bg-gray-50 border-b border-gray-100">
                             <tr>
-                                <th class="px-4 py-3 text-left font-medium">No</th>
-                                <th class="px-4 py-3 text-left font-medium">Nama Sekolah</th>
-                                <th class="px-4 py-3 text-left font-medium">Email</th>
-                                <th class="px-4 py-3 text-left font-medium">Status</th>
+                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">No</th>
+                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Nama Sekolah</th>
+                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">NPSN</th>
+                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Jenjang</th>
+                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Email</th>
+                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Status</th>
                             </tr>
                         </thead>
                         <tbody id="resultTableBody" class="text-sm divide-y divide-gray-100"></tbody>
@@ -101,7 +119,26 @@
                 </div>
             </div>
         </div>
-    </div>
+    </main>
+
+    <!-- Footer -->
+    <footer class="bg-white border-t border-gray-200 py-6">
+        <div class="container mx-auto px-4">
+            <div class="flex flex-col md:flex-row justify-between items-center">
+                <div class="mb-4 md:mb-0">
+                    <p class="text-sm text-gray-500">© 2025 Ekstraktor Email Sekolah. All rights reserved.</p>
+                </div>
+                <div class="flex space-x-4">
+                    <a href="#" class="text-sm text-gray-500 hover:text-blue-500">Privacy Policy</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-blue-500">Terms of Service</a>
+                    <a href="#" class="text-sm text-gray-500 hover:text-blue-500">Contact</a>
+                </div>
+            </div>
+            <div class="mt-4 text-center md:text-left">
+                <p class="text-xs text-gray-400">Disclaimer: Tool ini hanya untuk keperluan pendidikan dan menggunakan data referensi dari Kemdikbud.</p>
+            </div>
+        </div>
+    </footer>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/xlsx/0.18.5/xlsx.full.min.js"></script>
     <script src="script.js"></script>
