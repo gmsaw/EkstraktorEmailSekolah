@@ -1,65 +1,71 @@
 <!DOCTYPE html>
-<html lang="id">
+<html lang="id" class="h-full">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Ekstraktor Email Sekolah by.gmsaw</title>
-    <link href="../public/styles.css" rel="stylesheet">
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600&display=swap');
-        body {
-            font-family: 'Inter', sans-serif;
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    animation: {
+                        float: 'float 3s ease-in-out infinite',
+                    },
+                    keyframes: {
+                        float: {
+                            '0%, 100%': { transform: 'translateY(0)' },
+                            '50%': { transform: 'translateY(-5px)' },
+                        }
+                    }
+                }
+            }
         }
-        .animate-float {
-            animation: float 3s ease-in-out infinite;
-        }
-        @keyframes float {
-            0%, 100% { transform: translateY(0); }
-            50% { transform: translateY(-5px); }
-        }
-    </style>
+    </script>
 </head>
-<body class="bg-gray-50 min-h-screen text-gray-800">
+<body class="flex flex-col min-h-screen bg-gray-50 text-gray-800">
     <!-- Header -->
-    <header class="bg-white shadow-sm">
-        <div class="container mx-auto px-4 py-4 flex justify-between items-center">
-            <div class="flex items-center space-x-2">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
-                </svg>
-                <h1 class="text-xl font-semibold">Ekstraktor Email Sekolah</h1>
-            </div>
-            <div class="text-sm text-gray-500">
-                <a href="https://instagram.com/gmsaw_" class="hover:text-blue-500 transition-colors">by.gmsaw</a>
+    <header class="bg-white shadow-sm sticky top-0 z-10">
+        <div class="container mx-auto px-4 py-3">
+            <div class="flex justify-between items-center">
+                <div class="flex items-center space-x-2">
+                    <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
+                    </svg>
+                    <h1 class="text-xl font-semibold whitespace-nowrap">Ekstraktor Email Sekolah</h1>
+                </div>
+                <div class="text-sm text-gray-500 whitespace-nowrap">
+                    <a href="https://instagram.com/gmsaw_" class="hover:text-blue-500 transition-colors">by.gmsaw</a>
+                </div>
             </div>
         </div>
     </header>
 
-    <main class="container mx-auto px-4 py-8 max-w-4xl">
-        <!-- Header -->
-        <div class="text-center mb-10">
-            <div class="w-20 h-20 mx-auto mb-4 rounded-full bg-blue-50 flex items-center justify-center animate-float">
-                <svg xmlns="http://www.w3.org/2000/svg" class="h-10 w-10 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+    <!-- Main Content -->
+    <main class="flex-grow container mx-auto px-4 py-6 max-w-4xl">
+        <div class="text-center mb-6 md:mb-10">
+            <div class="w-16 h-16 md:w-20 md:h-20 mx-auto mb-3 md:mb-4 rounded-full bg-blue-50 flex items-center justify-center animate-float">
+                <svg xmlns="http://www.w3.org/2000/svg" class="h-8 w-8 md:h-10 md:w-10 text-blue-500" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                     <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 8l7.89 5.26a2 2 0 002.22 0L21 8M5 19h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v10a2 2 0 002 2z" />
                 </svg>
             </div>
-            <h1 class="text-3xl font-light text-gray-800 mb-2">Ekstraktor Email Sekolah</h1>
-            <p class="text-gray-500">Ekstrak alamat email sekolah dari database Kemdikbud</p>
+            <h1 class="text-2xl md:text-3xl font-light text-gray-800 mb-1 md:mb-2">Ekstraktor Email Sekolah</h1>
+            <p class="text-gray-500 text-sm md:text-base">Ekstrak alamat email sekolah dari database Kemdikbud</p>
         </div>
 
         <!-- Main Card -->
         <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
             <!-- Upload Section -->
-            <div class="p-6 border-b border-gray-100">
-                <div id="uploadArea" class="border-2 border-dashed border-gray-200 rounded-lg p-8 text-center cursor-pointer transition-all duration-200 hover:border-blue-300 hover:bg-blue-50/50">
-                    <div class="mx-auto w-12 h-12 mb-3 text-gray-400">
+            <div class="p-4 md:p-6 border-b border-gray-100">
+                <div id="uploadArea" class="border-2 border-dashed border-gray-200 rounded-lg p-6 md:p-8 text-center cursor-pointer transition-all duration-200 hover:border-blue-300 hover:bg-blue-50/50">
+                    <div class="mx-auto w-10 h-10 md:w-12 md:h-12 mb-2 md:mb-3 text-gray-400">
                         <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor">
                             <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M7 16a4 4 0 01-.88-7.903A5 5 0 1115.9 6L16 6a5 5 0 011 9.9M15 13l-3-3m0 0l-3 3m3-3v12" />
                         </svg>
                     </div>
-                    <p class="text-gray-600 mb-1">Seret file Excel ke sini atau</p>
-                    <p class="text-sm text-gray-400 mb-3">Format harus mengandung kolom NPSN</p>
-                    <button class="px-4 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
+                    <p class="text-gray-600 mb-1 text-sm md:text-base">Seret file Excel ke sini atau</p>
+                    <p class="text-xs md:text-sm text-gray-400 mb-2 md:mb-3">Format harus mengandung kolom NPSN</p>
+                    <button class="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors">
                         Pilih File
                     </button>
                     <input type="file" id="fileInput" accept=".xlsx, .xls" class="hidden">
@@ -67,75 +73,74 @@
             </div>
 
             <!-- Action Buttons -->
-            <div class="p-4 bg-gray-50 flex justify-between items-center">
-                <div class="flex space-x-2">
-                    <button id="processBtn" class="px-4 py-2 text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+            <div class="p-3 md:p-4 bg-gray-50 flex flex-col sm:flex-row justify-between items-center gap-2 sm:gap-0">
+                <div class="flex space-x-2 w-full sm:w-auto">
+                    <button id="processBtn" class="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm bg-blue-500 text-white rounded-lg hover:bg-blue-600 transition-colors disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto">
                         Mulai Proses
                     </button>
-                    <button id="retryBtn" class="px-4 py-2 text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors hidden">
+                    <button id="retryBtn" class="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm bg-gray-200 text-gray-700 rounded-lg hover:bg-gray-300 transition-colors hidden w-full sm:w-auto">
                         Coba Ulang
                     </button>
                 </div>
-                <button id="downloadBtn" class="px-4 py-2 text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed">
+                <button id="downloadBtn" class="px-3 py-1.5 md:px-4 md:py-2 text-xs md:text-sm border border-gray-300 text-gray-700 rounded-lg hover:bg-gray-100 transition-colors disabled:opacity-50 disabled:cursor-not-allowed w-full sm:w-auto">
                     Download Hasil
                 </button>
             </div>
         </div>
 
         <!-- Progress Section -->
-        <div id="progressContainer" class="mt-6 hidden">
-            <div class="flex items-center justify-between mb-2">
-                <span id="statusText" class="text-sm text-gray-600">Memproses data...</span>
-                <span id="progressText" class="text-sm font-medium text-gray-600">0%</span>
+        <div id="progressContainer" class="mt-4 md:mt-6 hidden">
+            <div class="flex items-center justify-between mb-1 md:mb-2">
+                <span id="statusText" class="text-xs md:text-sm text-gray-600">Memproses data...</span>
+                <span id="progressText" class="text-xs md:text-sm font-medium text-gray-600">0%</span>
             </div>
-            <div class="w-full bg-gray-200 rounded-full h-2">
-                <div id="progressBar" class="bg-blue-500 h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
+            <div class="w-full bg-gray-200 rounded-full h-1.5 md:h-2">
+                <div id="progressBar" class="bg-blue-500 h-1.5 md:h-2 rounded-full transition-all duration-300" style="width: 0%"></div>
             </div>
         </div>
 
         <!-- Hasil Ekstraksi Section -->
-        <div id="resultContainer" class="mt-8 hidden">
-            <div class="flex justify-between items-center mb-4">
-                <h2 class="text-lg font-medium text-gray-700">Hasil Ekstraksi</h2>
-                <span id="successCount" class="text-xs bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full"></span>
+        <div id="resultContainer" class="mt-6 md:mt-8 hidden">
+            <div class="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 md:mb-4 gap-2">
+                <h2 class="text-base md:text-lg font-medium text-gray-700">Hasil Ekstraksi</h2>
+                <span id="successCount" class="text-xs bg-blue-100 text-blue-800 px-2.5 py-0.5 rounded-full self-start sm:self-auto"></span>
             </div>
             
             <div class="bg-white rounded-xl shadow-sm border border-gray-100 overflow-hidden">
-                <!-- Tambahkan container dengan overflow-x-auto -->
                 <div class="overflow-x-auto w-full">
                     <table class="w-full min-w-max">
                         <thead class="text-xs text-gray-500 bg-gray-50 border-b border-gray-100">
                             <tr>
-                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">No</th>
-                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Nama Sekolah</th>
-                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">NPSN</th>
-                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Jenjang</th>
-                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Email</th>
-                                <th class="px-4 py-3 text-left font-medium whitespace-nowrap">Status</th>
+                                <th class="px-2 py-2 md:px-4 md:py-3 text-left font-medium whitespace-nowrap">No</th>
+                                <th class="px-2 py-2 md:px-4 md:py-3 text-left font-medium whitespace-nowrap">Nama Sekolah</th>
+                                <th class="px-2 py-2 md:px-4 md:py-3 text-left font-medium whitespace-nowrap">NPSN</th>
+                                <th class="px-2 py-2 md:px-4 md:py-3 text-left font-medium whitespace-nowrap">Jenjang</th>
+                                <th class="px-2 py-2 md:px-4 md:py-3 text-left font-medium whitespace-nowrap">Email</th>
+                                <th class="px-2 py-2 md:px-4 md:py-3 text-left font-medium whitespace-nowrap">Status</th>
                             </tr>
                         </thead>
-                        <tbody id="resultTableBody" class="text-sm divide-y divide-gray-100"></tbody>
+                        <tbody id="resultTableBody" class="text-xs md:text-sm divide-y divide-gray-100"></tbody>
                     </table>
                 </div>
             </div>
         </div>
     </main>
 
-    <!-- Footer -->
-    <footer class="bg-white border-t border-gray-200 py-6">
+    <!-- Footer  -->
+    <footer class="bg-white border-t border-gray-200 py-4 md:py-6 mt-auto">
         <div class="container mx-auto px-4">
-            <div class="flex flex-col md:flex-row justify-between items-center">
-                <div class="mb-4 md:mb-0">
-                    <p class="text-sm text-gray-500">© 2025 Ekstraktor Email Sekolah. All rights reserved.</p>
+            <div class="flex flex-col md:flex-row justify-between items-center gap-2 md:gap-0">
+                <div class="mb-2 md:mb-0">
+                    <p class="text-xs md:text-sm text-gray-500">© 2025 Ekstraktor Email Sekolah. All rights reserved.</p>
                 </div>
-                <div class="flex space-x-4">
-                    <a href="#" class="text-sm text-gray-500 hover:text-blue-500">Privacy Policy</a>
-                    <a href="#" class="text-sm text-gray-500 hover:text-blue-500">Terms of Service</a>
-                    <a href="#" class="text-sm text-gray-500 hover:text-blue-500">Contact</a>
+                <div class="flex flex-wrap justify-center gap-x-4 gap-y-1">
+                    <a href="#" class="text-xs md:text-sm text-gray-500 hover:text-blue-500">Privacy Policy</a>
+                    <a href="#" class="text-xs md:text-sm text-gray-500 hover:text-blue-500">Terms of Service</a>
+                    <a href="#" class="text-xs md:text-sm text-gray-500 hover:text-blue-500">Contact</a>
                 </div>
             </div>
-            <div class="mt-4 text-center md:text-left">
-                <p class="text-xs text-gray-400">Disclaimer: Tool ini hanya untuk keperluan pendidikan dan menggunakan data referensi dari Kemdikbud.</p>
+            <div class="mt-2 md:mt-4 text-center md:text-left">
+                <p class="text-[0.65rem] md:text-xs text-gray-400">Disclaimer: Tool ini hanya untuk keperluan pendidikan dan menggunakan data referensi dari Kemdikbud.</p>
             </div>
         </div>
     </footer>
