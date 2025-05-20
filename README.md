@@ -1,5 +1,10 @@
 # Ekstraktor Email Sekolah
 
+<p align="center">
+  <img src="/src/img/frame1.png" width="200">
+  <img src="/src/img/frame2.png" width="200"> 
+</p>
+  
 ![App Screenshot](/src/img/preview.png)  
 *Tampilan aplikasi Ekstraktor Email Sekolah*
 

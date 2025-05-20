@@ -442,7 +442,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 statusText.textContent = `Memproses: ${school.NAMA_SEKOLAH || 'N/A'}`;
                 
                 // Random delay antara 0.5-1.5 detik
-                await new Promise(resolve => setTimeout(resolve, 500 + Math.random() * 1000));
+                await new Promise(resolve => setTimeout(resolve, 250 + Math.random() * 500));
                 
                 // Gunakan email yang sudah ada jika tersedia
                 const email = school.email || await fetchSchoolEmail(school.NPSN);
